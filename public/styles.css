@@ -1,0 +1,89 @@
+header {
+display: block;
+background-color: blue;
+color: white;
+padding: 20px;
+margin-bottom: 20px;
+height: 80px;
+
+}
+nav {
+float: left;
+width: 12%;
+background-color: yellow;
+height: 400px;
+
+}
+main {
+float: left;
+width: 80%;
+background-color: darkblue;
+color: white;
+margin-left: 2%;
+height: 400px;
+}
+footer {
+clear: both;
+background-color: darkgreen;
+color: white;
+}
+#welcome-box {
+
+	display: inline-block;
+	float: right;
+	background-color: red;
+	width: 15%;
+	Height: 80px;
+	padding: 0px;
+
+}
+#login{
+	background-color: blue;
+	float: center;
+	width: 80%;
+	height: 10%;
+	margin: 10%
+}
+h1{
+
+	display:inline-block;
+	float: center;
+	background-color: red;
+	width: 30%;
+	margin: 0%;
+	padding-left: 10%;
+	margin-left: 14%;
+
+}
+#logo{
+
+	display: inline-block;
+	float: left;
+	width: 10%;
+	Height: 80px;
+	margin-left: 3%;
+}
+
+#content{
+	padding: 10%;
+	background-color: red;
+	width: 70%;
+	margin: 6%;
+}
+img{
+	max-height: 88px;
+}
+a {
+	display: block;
+	padding-left: 10px:;
+	padding-right: 10px;
+	padding-top:10px;
+	background-color: red;
+	outline: 10px;
+	outline-color: black;
+	height: 50px;
+	text-align: center;
+}
+a:hover{
+	background-color: black;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='styles.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Montserrat" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+	  <div id ="logo">
+		<img src="http://www.northantscricket.com/media/3568/billing-with-crest-for-cc.png?crop=0,0,0,0&cropmode=percentage&width=300&height=300&rnd=131426897140000000">
+	  </div>
+      <h1>Billing Finance</h1>
+	  <div id ="welcome-box">
+		<form>
+			<input type="text" name="username" value="username">
+			<br>
+			<input type="text" name="password" value="password">
+			<br>
+			<input type="submit" value="submit">
+		</form>
+	  </div>
+    </header>
+
+    <main>
+		<div id ="content">
+      <div id ="homepage">
+        <h2>get records</h2>
+        <div id="records"> </div>
+      </div>
+
+      <script src="http://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      <script src="http://unpkg.com/react@15/dist/react.js"></script>
+      <script src="http://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+      <!-- react componant -->
+      <script type="text/babel">
+
+      var records = React.create-react-class{
+        getInitialState: function(){
+          return({
+            records:[]
+          });
+        },
+        render: function(){
+          var records = this.state.records;
+          records = records.map(function(record, index){
+            return(
+                <li key={index}>
+                  <span className = "record ID">{record.obj.recordId}</span>
+                  <span className="name">{record.obj.name}</span>
+                </li>
+            )
+          });
+          return(
+            <div id="record-container">
+              <form id="search" onSubmit={this.handleSubmit}>
+                <input type="submit" value="records"/>
+              </form>
+              <ul>{records}</ul>
+            </div>
+          );
+        },
+        handleSubmit:function(e){
+          e.preventDefault();
+          fetch('/api/records').then(function(data){
+            return data.json();
+          }).then(json => {
+            this.setState({
+              records:json
+            });
+          });
+        }
+      };
+
+      ReactDOM.render(<records/>,document.getElementById('records'));
+      </script>
+
+  	</div>
+    </main>
+
+    <footer>
+      &copy; Your Name 2017
+    </footer>
+  </body>
+</html>
